@@ -6,6 +6,9 @@ from random import randint
 # – гербом. Определите минимальное число монеток, которые нужно перевернуть, чтобы все монетки
 #  были повернуты вверх одной и той же стороной. Выведите минимальное количество монет, которые нужно перевернуть
 
+def space():
+    print('')
+    print('')
 
 def task_1():
     print('Задача 10')
@@ -35,15 +38,20 @@ def task_2():
     print('Задача 12')
     summ = int(input('Введите сумму чисел '))
     product = int(input('Введите произведение чисел '))
+    first_numb = 0
+    second_numb = 0
     for i in range(summ):
         for j in range(summ):
             if i+j == summ and i*j == product:
-                print(f'Первое число равно {i}, второе число равно {j}')
-
+                first_numb = i
+                second_numb = j
+    print(f'Первое число равно {first_numb}, второе число равно {second_numb}')
+    space()
     print('Еще одно решение менее загружающее систему')
-    x_1 = int(((summ - math.sqrt(summ*summ-(4*product)))/2))
-    x_2 = int(((summ + math.sqrt(summ*summ-(4*product)))/2))
-    print(f'Первое число равно {x_1}, второе число равно {x_2}')
+    first_numb = int(((summ + math.sqrt(summ*summ-(4*product)))/2))
+    second_numb = int(((summ - math.sqrt(summ*summ-(4*product)))/2))
+    print(f'Первое число равно {first_numb}, второе число равно {second_numb}')
+    
 
 
 # Задача 14: Требуется вывести все целые степени двойки (т.е. числа вида 2k), не превосходящие числа N.
@@ -60,7 +68,10 @@ def task_3():
       
 def main():
     task_1()
+
+    space()
     task_2()
+    space()
     task_3()
 
 
